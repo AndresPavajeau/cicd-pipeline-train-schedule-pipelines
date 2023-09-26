@@ -4,8 +4,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Running build automation'
-                //sh './gradlew build --no-daemon'
-                sh sudo apt show gradle | grep Version
+                sh './gradlew build --no-daemon'
+                //sh sudo apt show gradle | grep Version
                 archiveArtifacts artifacts: 'dist/trainSchedule.zip'
             }
         }
